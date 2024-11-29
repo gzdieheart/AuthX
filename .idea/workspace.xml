@@ -23,9 +23,9 @@
       </map>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2pTrF1m25FNxILV6qjkBC2tDr7B" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -33,10 +33,28 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Maven.authx [clean].executor": "Run",
+    "Maven.authx [compile].executor": "Run",
+    "Maven.authx [install].executor": "Run",
+    "Maven.authx [package].executor": "Run",
+    "Maven.authx [site].executor": "Run",
+    "Maven.authx [test].executor": "Run",
+    "Maven.authx [validate].executor": "Run",
+    "Maven.authx [verify].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.SecurityApplication.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/project/AuthX",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -52,6 +70,13 @@
       <module name="AuthX" />
       <option name="filePath" />
       <method v="2" />
+    </configuration>
+    <configuration name="AuthxApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="security" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gzdieheart.authx.AuthxApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
   </component>
   <component name="SharedIndexes">
@@ -70,7 +95,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1732800799730</updated>
-      <workItem from="1732800801355" duration="255000" />
+      <workItem from="1732800801355" duration="3113000" />
+      <workItem from="1732804431406" duration="3669000" />
     </task>
     <servers />
   </component>
