@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="daf8629c-a8f8-4685-a5c6-1e832b53d647" name="更改" comment="" />
+    <list default="true" id="daf8629c-a8f8-4685-a5c6-1e832b53d647" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzdieheart/authx/AuthxApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gzdieheart/authx/AuthxApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzdieheart/authx/config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gzdieheart/authx/config/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzdieheart/authx/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gzdieheart/authx/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzdieheart/authx/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gzdieheart/authx/controller/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzdieheart/authx/controller/AuthorizationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gzdieheart/authx/controller/AuthorizationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzdieheart/authx/dao/request/SignUpRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gzdieheart/authx/dao/request/SignUpRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzdieheart/authx/dao/request/SigninRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gzdieheart/authx/dao/request/SigninRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzdieheart/authx/dao/response/JwtAuthenticationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gzdieheart/authx/dao/response/JwtAuthenticationResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzdieheart/authx/entities/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gzdieheart/authx/entities/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzdieheart/authx/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gzdieheart/authx/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzdieheart/authx/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gzdieheart/authx/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzdieheart/authx/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gzdieheart/authx/service/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzdieheart/authx/service/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gzdieheart/authx/service/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzdieheart/authx/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gzdieheart/authx/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzdieheart/authx/service/impl/AuthenticationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gzdieheart/authx/service/impl/AuthenticationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzdieheart/authx/service/impl/JwtServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gzdieheart/authx/service/impl/JwtServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzdieheart/authx/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gzdieheart/authx/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/gzdieheart/authx/SecurityApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/gzdieheart/authx/AuthxApplicationTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,7 +94,7 @@
     </configuration>
     <configuration name="AuthxApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="security" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gzdieheart.authx.AuthxApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.gzdieheart.authx.AuthxApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -97,7 +117,7 @@
       <option name="presentableId" value="Default" />
       <updated>1732800799730</updated>
       <workItem from="1732800801355" duration="3113000" />
-      <workItem from="1732804431406" duration="4027000" />
+      <workItem from="1732804431406" duration="5403000" />
     </task>
     <servers />
   </component>
