@@ -13,11 +13,19 @@ import org.gzdieheart.authx.service.AuthenticationService;
 
 import lombok.RequiredArgsConstructor;
 
+/**
+ * @author hyj
+ * @version 1.0
+ * @date  2024/11/29
+ * 鉴权控制器
+ */
+
 @RestController
 @RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
 public class AuthenticationController {
     private final AuthenticationService authenticationService;
+
     @PostMapping("/signup")
     public ResponseEntity<JwtAuthenticationResponse> signup(@RequestBody SignUpRequest request) {
         return ResponseEntity.ok(authenticationService.signup(request));
