@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "_user")
+@Table(name = "user")
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,6 +32,7 @@ public class User implements UserDetails {
     private Role role;
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
+        //return null;
         return List.of(new SimpleGrantedAuthority(role.name()));
     }
 
