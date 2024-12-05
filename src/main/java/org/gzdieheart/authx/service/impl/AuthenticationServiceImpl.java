@@ -10,7 +10,8 @@ import org.gzdieheart.authx.dao.request.SigninRequest;
 import org.gzdieheart.authx.dao.response.JwtAuthenticationResponse;
 import org.gzdieheart.authx.entities.Role;
 import org.gzdieheart.authx.entities.User;
-import org.gzdieheart.authx.repository.UserRepository;
+//import org.gzdieheart.authx.repository.UserRepository;
+import org.gzdieheart.authx.repository.UserMapper;
 import org.gzdieheart.authx.service.AuthenticationService;
 import org.gzdieheart.authx.service.JwtService;
 
@@ -27,17 +28,23 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class
 AuthenticationServiceImpl implements AuthenticationService {
-    private final UserRepository userRepository;
+    //private final UserRepository userRepository;
+    private final UserMapper userMapper;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
 
     @Override
     public JwtAuthenticationResponse signup(SignUpRequest request) {
+        //var user = User.builder().firstName(request.getFirstName()).lastName(request.getLastName())
+        //    .email(request.getEmail()).password(passwordEncoder.encode(request.getPassword()))
+        //    .role(Role.USER).build();
+        //userRepository.save(user);
+
         var user = User.builder().firstName(request.getFirstName()).lastName(request.getLastName())
             .email(request.getEmail()).password(passwordEncoder.encode(request.getPassword()))
             .role(Role.USER).build();
-        userRepository.save(user);
+        userMapper.insertOrUpdate(user);
         var jwt = jwtService.generateToken(user);
         return JwtAuthenticationResponse.builder().token(jwt).build();
     }
@@ -45,7 +52,9 @@ AuthenticationServiceImpl implements AuthenticationService {
     @Override
     public JwtAuthenticationResponse signin(SigninRequest request) {
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
-        var user = userRepository.findByEmail(request.getEmail())
+        //var user = userRepository.findByEmail(request.getEmail())
+        //    .orElseThrow(() -> new IllegalArgumentException("Invalid email or password."));
+        var user = userMapper.findByEmail(request.getEmail())
             .orElseThrow(() -> new IllegalArgumentException("Invalid email or password."));
         var jwt = jwtService.generateToken(user);
         return JwtAuthenticationResponse.builder().token(jwt).build();
