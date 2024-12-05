@@ -1,6 +1,12 @@
-spring:
+server:
+  port:
+    8080
+  servlet:
+    context-path: /
   application:
     name: authx
+
+spring:
   #jpa:
   #  database-platform: org.hibernate.dialect.MySQLDialect
   #  show-sql: true
