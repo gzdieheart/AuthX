@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="daf8629c-a8f8-4685-a5c6-1e832b53d647" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/gzdieheart/authx/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gzdieheart/authx/service/AuthenticationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/gzdieheart/authx/service/impl/AuthenticationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gzdieheart/authx/service/impl/AuthenticationServiceImpl.java" afterDir="false" />
-    </list>
+    <list default="true" id="daf8629c-a8f8-4685-a5c6-1e832b53d647" name="更改" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,7 +117,7 @@
       <workItem from="1733365374211" duration="7911000" />
       <workItem from="1733381376132" duration="6345000" />
       <workItem from="1733405935932" duration="591000" />
-      <workItem from="1733455072857" duration="667000" />
+      <workItem from="1733455072857" duration="5479000" />
     </task>
     <servers />
   </component>
