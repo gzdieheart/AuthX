@@ -9,6 +9,7 @@ import org.gzdieheart.authx.restful.error.ErrorDetail;
 import org.gzdieheart.authx.restful.resp.R;
 
 import io.jsonwebtoken.ExpiredJwtException;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
@@ -41,6 +42,7 @@ import java.util.stream.Collectors;
  */
 
 @RestControllerAdvice
+@ConditionalOnProperty(prefix = "custom", name = "enable-global-exception-handler", havingValue = "true", matchIfMissing = false)
 public class GlobalExceptionHandler {
 
     /**
