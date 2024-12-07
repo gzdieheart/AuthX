@@ -34,29 +34,39 @@ AuthenticationServiceImpl implements AuthenticationService {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
 
-    @Override
+    /*@Override
     public JwtAuthenticationResponse signup(SignUpRequest request) {
-        //var user = User.builder().firstName(request.getFirstName()).lastName(request.getLastName())
-        //    .email(request.getEmail()).password(passwordEncoder.encode(request.getPassword()))
-        //    .role(Role.USER).build();
-        //userRepository.save(user);
-
         var user = User.builder().firstName(request.getFirstName()).lastName(request.getLastName())
             .email(request.getEmail()).password(passwordEncoder.encode(request.getPassword()))
             .role(Role.USER).build();
         userMapper.insertOrUpdate(user);
         var jwt = jwtService.generateToken(user);
         return JwtAuthenticationResponse.builder().token(jwt).build();
+    }*/
+    @Override
+    public String signup(SignUpRequest request) {
+        var user = User.builder().firstName(request.getFirstName()).lastName(request.getLastName())
+            .email(request.getEmail()).password(passwordEncoder.encode(request.getPassword()))
+            .role(Role.USER).build();
+        userMapper.insertOrUpdate(user);
+        var jwt = jwtService.generateToken(user);
+        return jwt;
     }
 
-    @Override
+    /*@Override
     public JwtAuthenticationResponse signin(SigninRequest request) {
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
-        //var user = userRepository.findByEmail(request.getEmail())
-        //    .orElseThrow(() -> new IllegalArgumentException("Invalid email or password."));
         var user = userMapper.findByEmail(request.getEmail())
             .orElseThrow(() -> new IllegalArgumentException("Invalid email or password."));
         var jwt = jwtService.generateToken(user);
         return JwtAuthenticationResponse.builder().token(jwt).build();
+    }*/
+    @Override
+    public String signin(SigninRequest request) {
+        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
+        var user = userMapper.findByEmail(request.getEmail())
+                .orElseThrow(() -> new IllegalArgumentException("Invalid email or password."));
+        var jwt = jwtService.generateToken(user);
+        return jwt;
     }
 }

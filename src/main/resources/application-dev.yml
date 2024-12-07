@@ -1,6 +1,14 @@
-spring:
+server:
+  port:
+    8080
+  servlet:
+    context-path: /
   application:
     name: authx
+
+spring:
+  jpa:
+    open-in-view: false # 显式禁用
   #jpa:
   #  database-platform: org.hibernate.dialect.MySQLDialect
   #  show-sql: true
@@ -8,6 +16,8 @@ spring:
   #    hibernate.physical_naming_strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
   #    hibernate:
   #      format_sql: true
+  jackson:
+    default-property-inclusion: non_null
   datasource:
     url: jdbc:mysql://localhost:3306/authenticate?characterEncoding=UTF-8&useSSL=false
     username: root
@@ -20,9 +30,14 @@ spring:
       pool-name: HikariPool
       max-lifetime: 1800000
       connection-timeout: 30000
-  h2:
-    console:
-      enabled: true
+  #h2:
+  #  console:
+  #    enabled: true
+
+custom:
+  enable-global-exception-handler: true
+
 token:
   signing:
     key: 413F4428472B4B6250655368566D5970337336763979244226452948404D6351
+

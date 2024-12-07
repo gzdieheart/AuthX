@@ -12,6 +12,8 @@ import org.gzdieheart.authx.dao.response.JwtAuthenticationResponse;
  */
 
 public interface AuthenticationService {
-    JwtAuthenticationResponse signup(SignUpRequest request);
-    JwtAuthenticationResponse signin(SigninRequest request);
+    //JwtAuthenticationResponse signup(SignUpRequest request);
+    //JwtAuthenticationResponse signin(SigninRequest request);
+    String signup(SignUpRequest request);
+    String signin(SigninRequest request);
 }
