@@ -7,11 +7,10 @@ import org.springframework.stereotype.Service;
 
 import org.gzdieheart.authx.dao.request.SignUpRequest;
 import org.gzdieheart.authx.dao.request.SigninRequest;
-import org.gzdieheart.authx.dao.response.JwtAuthenticationResponse;
 import org.gzdieheart.authx.entities.Role;
 import org.gzdieheart.authx.entities.User;
 //import org.gzdieheart.authx.repository.UserRepository;
-import org.gzdieheart.authx.repository.UserMapper;
+import org.gzdieheart.authx.mapper.UserMapper;
 import org.gzdieheart.authx.service.AuthenticationService;
 import org.gzdieheart.authx.service.JwtService;
 

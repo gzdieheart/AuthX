@@ -1,4 +1,4 @@
-package org.gzdieheart.authx.repository;
+package org.gzdieheart.authx.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Select;
