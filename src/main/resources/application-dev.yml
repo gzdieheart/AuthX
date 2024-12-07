@@ -16,6 +16,8 @@ spring:
   #    hibernate.physical_naming_strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
   #    hibernate:
   #      format_sql: true
+  jackson:
+    default-property-inclusion: non_null
   datasource:
     url: jdbc:mysql://localhost:3306/authenticate?characterEncoding=UTF-8&useSSL=false
     username: root

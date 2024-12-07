@@ -100,8 +100,7 @@ public class R {
         return new R(DateUtil.now())
             .setSuccess(ResultSuccess.FAIL.getSuccess())
             .setCode(ResultSuccess.FAIL.getCode())
-            .setMessage(ResultSuccess.FAIL.getMessage())
-            .setData(null);
+            .setMessage(ResultSuccess.FAIL.getMessage());
     }
 
     /**
