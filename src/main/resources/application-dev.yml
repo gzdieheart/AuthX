@@ -48,3 +48,17 @@ springdoc:
   swagger-ui:
     enabled: true
     path: /swagger-ui.html
+
+logging:
+  console:
+    enabled: false  # 禁用控制台输出
+  file:
+    name: logs/application.log  # 设置日志文件路径和名称
+    max-size: 10MB  # 日志文件最大大小
+    max-history: 30  # 保留的日志文件历史数目
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"  # 设置文件日志输出格式
+  level:
+    org.springframework: INFO  # 设置 Spring Framework 的日志级别
+    org.gzdieheart.authx: DEBUG  # 设置自定义包 com.example 的日志级别
+
