@@ -6,7 +6,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import org.gzdieheart.authx.dao.request.SignUpRequest;
-import org.gzdieheart.authx.dao.request.SigninRequest;
+import org.gzdieheart.authx.dao.request.SignInRequest;
 import org.gzdieheart.authx.entities.Role;
 import org.gzdieheart.authx.entities.User;
 //import org.gzdieheart.authx.repository.UserRepository;
@@ -44,7 +44,7 @@ AuthenticationServiceImpl implements AuthenticationService {
     }*/
     @Override
     public String signup(SignUpRequest request) {
-        var user = User.builder().firstName(request.getFirstName()).lastName(request.getLastName())
+        var user = User.builder().firstName(request.getFirstname()).lastName(request.getLastname())
             .email(request.getEmail()).password(passwordEncoder.encode(request.getPassword()))
             .role(Role.USER).build();
         userMapper.insertOrUpdate(user);
@@ -61,7 +61,7 @@ AuthenticationServiceImpl implements AuthenticationService {
         return JwtAuthenticationResponse.builder().token(jwt).build();
     }*/
     @Override
-    public String signin(SigninRequest request) {
+    public String signin(SignInRequest request) {
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
         var user = userMapper.findByEmail(request.getEmail())
                 .orElseThrow(() -> new IllegalArgumentException("Invalid email or password."));

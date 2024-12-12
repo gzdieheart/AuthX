@@ -3,7 +3,6 @@ package org.gzdieheart.authx.excepiton;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.date.DateUtil;
-import cn.hutool.core.util.StrUtil;
 import org.gzdieheart.authx.restful.error.CommonErrorCode;
 import org.gzdieheart.authx.restful.error.ErrorDetail;
 import org.gzdieheart.authx.restful.resp.R;
@@ -24,15 +23,10 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.NoHandlerFoundException;
 import org.springframework.security.authentication.BadCredentialsException;
 
-//import javax.validation.ConstraintViolation;
-//import javax.validation.ConstraintViolationException;
-//import javax.validation.Path;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
-
 
 /**
  * @author hyj
@@ -128,13 +122,12 @@ public class GlobalExceptionHandler {
         List errorList = CollectionUtil.newArrayList();
 
         for (FieldError fieldError : bindingResult.getFieldErrors()) {
-            String msg = String.format("%s%s；", fieldError.getField(), fieldError.getDefaultMessage());
+            String msg = String.format("%s字段:%s；", fieldError.getField(), fieldError.getDefaultMessage());
             errorList.add(msg);
         }
 
         return R.failure().code(CommonErrorCode.INVALID_ARGUMENT.getCode())
-                .message(CommonErrorCode.INVALID_ARGUMENT.getMessage() + " "
-                        + CollUtil.join(errorList, ";"));
+                .message(CommonErrorCode.INVALID_ARGUMENT.getMessage() + " " + CollUtil.join(errorList, ";"));
     }
 
 

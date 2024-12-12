@@ -1,8 +1,7 @@
 package org.gzdieheart.authx.service;
 
 import org.gzdieheart.authx.dao.request.SignUpRequest;
-import org.gzdieheart.authx.dao.request.SigninRequest;
-import org.gzdieheart.authx.dao.response.JwtAuthenticationResponse;
+import org.gzdieheart.authx.dao.request.SignInRequest;
 
 /**
  * @author hyj
@@ -15,5 +14,5 @@ public interface AuthenticationService {
     //JwtAuthenticationResponse signup(SignUpRequest request);
     //JwtAuthenticationResponse signin(SigninRequest request);
     String signup(SignUpRequest request);
-    String signin(SigninRequest request);
+    String signin(SignInRequest request);
 }
