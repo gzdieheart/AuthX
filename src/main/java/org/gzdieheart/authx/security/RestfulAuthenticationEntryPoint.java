@@ -1,4 +1,4 @@
-package org.gzdieheart.authx.config;
+package org.gzdieheart.authx.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.gzdieheart.authx.restful.resp.R;

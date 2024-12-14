@@ -1,4 +1,4 @@
-package org.gzdieheart.authx.config;
+package org.gzdieheart.authx.security;
 
 import java.io.IOException;
 
