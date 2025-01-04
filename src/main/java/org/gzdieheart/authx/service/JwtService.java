@@ -1,7 +1,6 @@
 package org.gzdieheart.authx.service;
 
-import org.springframework.security.core.userdetails.UserDetails;
-
+import org.gzdieheart.authx.entities.User;
 /**
  * @author hyj
  * @version 1.0
@@ -11,6 +10,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 public interface JwtService {
     String extractUserName(String token);
-    String generateToken(UserDetails userDetails);
-    boolean isTokenValid(String token, UserDetails userDetails);
+    String generateToken(User user);
+    boolean isTokenValid(String token, User user);
 }

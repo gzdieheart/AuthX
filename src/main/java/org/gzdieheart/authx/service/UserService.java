@@ -1,6 +1,7 @@
 package org.gzdieheart.authx.service;
 
-import org.springframework.security.core.userdetails.UserDetailsService;
+import org.gzdieheart.authx.entities.User;
+import java.util.Optional;
 
 /**
  * @author hyj
@@ -10,5 +11,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
  */
 
 public interface UserService {
-    UserDetailsService userDetailsService();
+    public Optional<User> getUserByEmail(String email);
+    public org.springframework.security.core.userdetails.User createSpringSecurityUser(User user);
 }
