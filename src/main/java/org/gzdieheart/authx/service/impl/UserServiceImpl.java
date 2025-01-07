@@ -3,6 +3,7 @@ package org.gzdieheart.authx.service.impl;
 import org.gzdieheart.authx.entities.Authority;
 import org.gzdieheart.authx.mapper.AuthorityMapper;
 import org.gzdieheart.authx.utils.authenticate.GenerateUtil;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -34,6 +35,13 @@ public class UserServiceImpl implements UserService {
     private final UserMapper userMapper;
     private final AuthorityMapper authorityMapper;
 
+    @Value("${authX.generate-username.algorithm}")
+    private String algorithm;
+    @Value("${authX.generate-username.hash-length}")
+    private int hashLength;
+    @Value("${authX.generate-username.counter-length}")
+    private int counterLength;
+
     @Override
     public User getUserByEmail(String email) {
         return userMapper.findByEmail(email)
@@ -62,12 +70,12 @@ public class UserServiceImpl implements UserService {
         try {
             String localPart = email.split("@")[0];
             int counter = 1;
-            GenerateUsername generator = new GenerateUsername(localPart, "MD5", 5, counter);
+            GenerateUsername generator = new GenerateUsername(localPart, algorithm, hashLength, counterLength, counter);
             username = GenerateUtil.generateUsername(generator);
             while (userMapper.findByUsername(username).isPresent()) {
                 String hash = username.split("#")[1].substring(0, generator.getHashLength());
                 counter++;
-                username = localPart + "#" + hash + String.format("%03d", counter);
+                username = localPart + "#" + hash + String.format("%0" + counterLength + "d", counter);
             }
         }
         catch (NoSuchAlgorithmException e) {

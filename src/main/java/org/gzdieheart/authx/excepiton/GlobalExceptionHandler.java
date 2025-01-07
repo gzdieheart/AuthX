@@ -37,7 +37,7 @@ import java.util.stream.Collectors;
  */
 
 @RestControllerAdvice
-@ConditionalOnProperty(prefix = "custom", name = "enable-global-exception-handler", havingValue = "true", matchIfMissing = false)
+@ConditionalOnProperty(prefix = "authX", name = "enable-global-exception-handler", havingValue = "true", matchIfMissing = false)
 public class GlobalExceptionHandler {
 
     /**

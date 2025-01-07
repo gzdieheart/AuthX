@@ -34,8 +34,12 @@ spring:
   #  console:
   #    enabled: true
 
-custom:
+authX:
   enable-global-exception-handler: true
+  generate-username:
+    algorithm: MD5
+    hash-length: 5
+    counter-length: 3
 
 token:
   signing:

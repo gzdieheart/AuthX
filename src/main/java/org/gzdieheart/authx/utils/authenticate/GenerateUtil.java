@@ -34,7 +34,7 @@ public class GenerateUtil {
         String hash = new BigInteger(1, md.digest()).toString(16);
 
         // 提取前几个字符作为用户名的后缀，确保它在生成的范围内不会重复
-        String username = generator.getUsername() + "#" + hash.substring(0, generator.getHashLength()) + String.format("%03d", generator.getCounter());
+        String username = generator.getUsername() + "#" + hash.substring(0, generator.getHashLength()) + String.format("%0" + generator.getCounterLength() + "d", generator.getCounter());
 
         // 如果生成的用户名已经存在，递增数字直到找到一个唯一的用户名
         /*int counter = 1;

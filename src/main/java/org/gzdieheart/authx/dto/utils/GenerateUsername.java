@@ -14,5 +14,6 @@ public class GenerateUsername {
     private String username;
     private String algorithm;
     private int hashLength;
+    private int counterLength;
     private int counter;
 }
