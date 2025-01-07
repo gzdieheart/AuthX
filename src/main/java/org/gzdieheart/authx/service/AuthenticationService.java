@@ -1,7 +1,9 @@
 package org.gzdieheart.authx.service;
 
-import org.gzdieheart.authx.dao.request.SignUpRequest;
-import org.gzdieheart.authx.dao.request.SignInRequest;
+import org.gzdieheart.authx.dto.request.SignUpRequest;
+import org.gzdieheart.authx.dto.request.SignInRequest;
+
+import java.security.NoSuchAlgorithmException;
 
 /**
  * @author hyj

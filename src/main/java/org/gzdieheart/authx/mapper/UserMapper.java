@@ -18,4 +18,6 @@ import java.util.Optional;
 public interface UserMapper extends BaseMapper<User> {
     @Select("SELECT * FROM user WHERE email = #{email}")
     Optional<User> findByEmail(String email);
+    @Select("SELECT * FROM user WHERE username = #{username}")
+    Optional<User> findByUsername(String username);
 }

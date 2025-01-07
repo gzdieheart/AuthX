@@ -1,4 +1,4 @@
-package org.gzdieheart.authx.excepiton;
+package org.gzdieheart.authx.restful.error;
 
 import org.gzdieheart.authx.restful.resp.ResultCode;
 import lombok.Data;

@@ -40,6 +40,8 @@ public class User implements Serializable {
     private String lastName;
     @TableField("email")
     private String email;
+    @TableField("username")
+    private String username;
     @TableField("password")
     private String password;
     @TableField("role")

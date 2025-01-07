@@ -49,7 +49,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         jwt = authHeader.substring(7);
         userEmail = jwtService.extractUserName(jwt);
         if (StringUtils.isNotEmpty(userEmail) && SecurityContextHolder.getContext().getAuthentication() == null) {
-            User user = userService.getUserByEmail(userEmail).get();
+            User user = userService.getUserByEmail(userEmail);
             UserDetails userDetails = userService.createSpringSecurityUser(user);
             if (jwtService.isTokenValid(jwt, user)) {
                 SecurityContext context = SecurityContextHolder.createEmptyContext();

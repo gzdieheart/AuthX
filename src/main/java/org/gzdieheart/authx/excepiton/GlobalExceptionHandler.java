@@ -3,6 +3,7 @@ package org.gzdieheart.authx.excepiton;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.date.DateUtil;
+import org.gzdieheart.authx.restful.error.BusinessException;
 import org.gzdieheart.authx.restful.error.CommonErrorCode;
 import org.gzdieheart.authx.restful.error.ErrorDetail;
 import org.gzdieheart.authx.restful.resp.R;
@@ -22,6 +23,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.NoHandlerFoundException;
 import org.springframework.security.authentication.BadCredentialsException;
+import java.security.NoSuchAlgorithmException;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -55,7 +57,6 @@ public class GlobalExceptionHandler {
         errorDetail.setSuccess(CommonErrorCode.UNKNOWN_ERROR.getSuccess());
         errorDetail.setTimestamp(DateUtil.now());
         return errorDetail;
-
     }
 
     @ExceptionHandler(BadCredentialsException.class)

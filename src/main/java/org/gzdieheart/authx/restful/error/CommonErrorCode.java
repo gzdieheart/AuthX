@@ -30,14 +30,16 @@ public enum CommonErrorCode implements ResultCode {
     /**
      * 参数验证错误
      */
-    INVALID_ARGUMENT(false, CommonErrorConstant.InvalidArgument, "Validation failed for argument ");
-
+    INVALID_ARGUMENT(false, CommonErrorConstant.InvalidArgument, "Validation failed for argument "),
+    /**
+     * 参数验证错误
+     */
+    INVALID_ALGORITHM(false, CommonErrorConstant.InvalidAlgorithm, "Invalid algorithm "),;
 
     CommonErrorCode(Boolean success, String code, String message) {
         this.success = success;
         this.code = code;
         this.message = message;
-
     }
 
     /**

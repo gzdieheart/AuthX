@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import org.gzdieheart.authx.dao.request.SignUpRequest;
-import org.gzdieheart.authx.dao.request.SignInRequest;
+import org.gzdieheart.authx.dto.request.SignUpRequest;
+import org.gzdieheart.authx.dto.request.SignInRequest;
 import org.gzdieheart.authx.service.AuthenticationService;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -15,6 +15,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 import lombok.RequiredArgsConstructor;
 import jakarta.validation.Valid;
+
+import java.security.NoSuchAlgorithmException;
 
 /**
  * @author hyj
@@ -32,7 +34,7 @@ public class AuthenticationController {
 
     @PostMapping("/signup")
     @Operation(summary = "注册接口", description = "根据用户邮箱及密码生成注册信息")
-    public R signup(@Valid @RequestBody SignUpRequest request) {
+    public R signup(@Valid @RequestBody SignUpRequest request) throws NoSuchAlgorithmException {
         return R.success().data("token", authenticationService.signup(request));
     }
 

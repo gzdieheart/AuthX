@@ -13,13 +13,13 @@ public enum BusinessErrorCode implements ResultCode {
 
     Sign_Error(false, BusinessErrorConstant.SignError, "接口签名认证无效"),
     Api_Error(false, BusinessErrorConstant.ApiERROR, "应用程序接口调用无效"),
-    Wechat_Authenticate_Error(false, BusinessErrorConstant.WechatAuthenticateERROR, "微信认证无效");
+    Wechat_Authenticate_Error(false, BusinessErrorConstant.WechatAuthenticateERROR, "微信认证无效"),
+    Generate_Username_Error(false, BusinessErrorConstant.GenerateUsernameError, "生成用户名无效");
 
     BusinessErrorCode(Boolean success, String code, String message) {
         this.success = success;
         this.code = code;
         this.message = message;
-
     }
 
     /**

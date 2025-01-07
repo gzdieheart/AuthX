@@ -14,5 +14,5 @@ public interface BusinessErrorConstant {
     public static final String SignError = "500101";
     public static final String ApiERROR = "500102";
     public static final String WechatAuthenticateERROR = "500103";
-
+    public static final String GenerateUsernameError = "500104";
 }
