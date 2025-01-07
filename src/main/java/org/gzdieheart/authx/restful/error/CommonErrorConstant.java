@@ -18,5 +18,4 @@ public interface CommonErrorConstant {
     public static final String UnknownError = "500000";
     public static final String InvalidRequest = "500001";
     public static final String InvalidArgument = "500002";
-    public static final String InvalidAlgorithm = "500003";
 }

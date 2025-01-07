@@ -13,11 +13,8 @@ import org.gzdieheart.authx.entities.User;
 import org.gzdieheart.authx.mapper.UserMapper;
 import org.gzdieheart.authx.service.AuthenticationService;
 import org.gzdieheart.authx.service.JwtService;
-import org.gzdieheart.authx.utils.authenticate.GenerateUtil;
 
 import lombok.RequiredArgsConstructor;
-
-import java.security.NoSuchAlgorithmException;
 
 /**
  * @author hyj
@@ -30,8 +27,7 @@ import java.security.NoSuchAlgorithmException;
 @RequiredArgsConstructor
 public class
 AuthenticationServiceImpl implements AuthenticationService {
-    //private final UserRepository userRepository;
-    private final UserMapper userMapper;
+    //private final UserMapper userMapper;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
@@ -52,7 +48,8 @@ AuthenticationServiceImpl implements AuthenticationService {
         var user = User.builder().firstName(request.getFirstname()).lastName(request.getLastname())
             .email(request.getEmail()).username(username).password(passwordEncoder.encode(request.getPassword()))
             .role(Role.USER).build();
-        userMapper.insertOrUpdate(user);
+        //userMapper.insertOrUpdate(user);
+        userService.saveUser(user);
         var jwt = jwtService.generateToken(user);
         return jwt;
     }
@@ -68,8 +65,9 @@ AuthenticationServiceImpl implements AuthenticationService {
     @Override
     public String signin(SignInRequest request) {
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
-        var user = userMapper.findByEmail(request.getEmail())
-                .orElseThrow(() -> new IllegalArgumentException("Invalid email or password."));
+        //var user = userMapper.findByEmail(request.getEmail())
+        //        .orElseThrow(() -> new IllegalArgumentException("Invalid email or password."));
+        var user = userService.getUserByEmail(request.getEmail());
         var jwt = jwtService.generateToken(user);
         return jwt;
     }

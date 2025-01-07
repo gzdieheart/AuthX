@@ -16,8 +16,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import jakarta.validation.Valid;
 
-import java.security.NoSuchAlgorithmException;
-
 /**
  * @author hyj
  * @version 1.0
@@ -34,7 +32,7 @@ public class AuthenticationController {
 
     @PostMapping("/signup")
     @Operation(summary = "注册接口", description = "根据用户邮箱及密码生成注册信息")
-    public R signup(@Valid @RequestBody SignUpRequest request) throws NoSuchAlgorithmException {
+    public R signup(@Valid @RequestBody SignUpRequest request) {
         return R.success().data("token", authenticationService.signup(request));
     }
 

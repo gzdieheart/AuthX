@@ -9,6 +9,13 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.math.BigInteger;
 
+/**
+ * @author hyj
+ * @version 1.0
+ * @date  2025/01/04
+ * 生成用户名称工具类
+ */
+
 @Component
 @RequiredArgsConstructor
 public class GenerateUtil {
@@ -18,7 +25,7 @@ public class GenerateUtil {
         String localPart = email.split("@")[0];
 
         // 创建一个MD5哈希值生成器
-        MessageDigest md = MessageDigest.getInstance("MD6");
+        MessageDigest md = MessageDigest.getInstance("MD5");
         md.update(localPart.getBytes());
 
         // 生成哈希值并将其转化为十六进制字符串

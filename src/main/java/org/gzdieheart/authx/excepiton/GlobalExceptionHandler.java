@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.NoHandlerFoundException;
 import org.springframework.security.authentication.BadCredentialsException;
-import java.security.NoSuchAlgorithmException;
 
 import java.util.Map;
 import java.util.HashMap;

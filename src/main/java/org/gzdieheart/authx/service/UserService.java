@@ -2,9 +2,6 @@ package org.gzdieheart.authx.service;
 
 import org.gzdieheart.authx.entities.User;
 
-import java.security.NoSuchAlgorithmException;
-import java.util.Optional;
-
 /**
  * @author hyj
  * @version 1.0
@@ -16,4 +13,5 @@ public interface UserService {
     public User getUserByEmail(String email);
     public org.springframework.security.core.userdetails.User createSpringSecurityUser(User user);
     public String generateUniqueUsername(String email);
+    public boolean saveUser(User user);
 }

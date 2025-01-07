@@ -71,7 +71,14 @@ public class UserServiceImpl implements UserService {
         catch (NoSuchAlgorithmException e) {
             throw new BusinessException(BusinessErrorCode.Generate_Username_Error);
         }
+        catch(Exception e) {
+            throw new BusinessException(BusinessErrorCode.Generate_Username_Error, e.getMessage());
+        }
         return username;
     }
 
+    @Override
+    public boolean saveUser(User user) {
+        return userMapper.insertOrUpdate(user);
+    }
 }

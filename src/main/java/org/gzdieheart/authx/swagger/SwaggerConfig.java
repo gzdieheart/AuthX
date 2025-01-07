@@ -5,6 +5,13 @@ import org.springframework.context.annotation.Configuration;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 
+/**
+ * @author hyj
+ * @version 1.0
+ * @date  2024/12/29
+ * Api接口文档配置
+ */
+
 @Configuration
 public class SwaggerConfig {
 

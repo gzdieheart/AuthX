@@ -1,7 +1,6 @@
 package org.gzdieheart.authx.controller;
 
 import org.gzdieheart.authx.restful.resp.R;
-//import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,9 +19,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AuthorizationController {
     @GetMapping
-    //public ResponseEntity<String> sayHello() {
-    //    return ResponseEntity.ok("Here is your resource");
-    //}
     public R sayHello() {
         return R.success().message("Here is your resource");
     }

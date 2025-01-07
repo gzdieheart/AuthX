@@ -1,13 +1,7 @@
 package org.gzdieheart.authx.entities;
 
-import java.util.Collection;
-import java.util.List;
-
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -47,5 +41,3 @@ public class User implements Serializable {
     @TableField("role")
     private Role role;
 }
-
-

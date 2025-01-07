@@ -9,8 +9,6 @@ package org.gzdieheart.authx.restful.resp;
 
 public interface ResultCode {
     String getCode();
-
     String getMessage();
-
     boolean getSuccess();
 }

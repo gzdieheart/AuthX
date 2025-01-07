@@ -8,6 +8,13 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Optional;
 
+/**
+ * @author hyj
+ * @version 1.0
+ * @date  2025/01/04
+ * 获取当前用户工具类
+ */
+
 public class SecurityUtil {
 
     private static final Logger LOG = LoggerFactory.getLogger(SecurityUtil.class);
