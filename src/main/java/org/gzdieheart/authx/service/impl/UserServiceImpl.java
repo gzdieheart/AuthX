@@ -13,6 +13,7 @@ import org.gzdieheart.authx.service.UserService;
 import org.gzdieheart.authx.entities.User;
 import org.gzdieheart.authx.restful.error.BusinessException;
 import org.gzdieheart.authx.restful.error.BusinessErrorCode;
+import org.gzdieheart.authx.dto.utils.GenerateUsername;
 
 import lombok.RequiredArgsConstructor;
 
@@ -61,9 +62,10 @@ public class UserServiceImpl implements UserService {
         try {
             String localPart = email.split("@")[0];
             int counter = 1;
-            username = GenerateUtil.generateUsername(email, counter);
+            GenerateUsername generator = new GenerateUsername(localPart, "MD5", 5, counter);
+            username = GenerateUtil.generateUsername(generator);
             while (userMapper.findByUsername(username).isPresent()) {
-                String hash = username.split("#")[1].substring(0, 5);
+                String hash = username.split("#")[1].substring(0, generator.getHashLength());
                 counter++;
                 username = localPart + "#" + hash + String.format("%03d", counter);
             }
